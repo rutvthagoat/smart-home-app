@@ -1,0 +1,14 @@
+workflows:
+  expo-android:
+    name: Expo Android Build
+
+    environment:
+      node: 20
+
+    scripts:
+      - npm install
+      - npx expo install
+      - npx eas-cli build --platform android --profile preview --non-interactive
+
+    artifacts:
+      - "*.apk"
